@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "NumClass.h"
-// #include <math.h>
+#include <math.h>
+
 int main()
 {
     printf("enter two numbers \n");
