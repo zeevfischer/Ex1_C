@@ -2,6 +2,17 @@
 #include "NumClass.h"
 #include <math.h>
 
+int revers(int a)
+{  
+    int temp =0;
+    while(a != 0)
+    {
+        temp*=10;
+        temp+=a%10;
+		a=a/10;
+    }
+    return temp;
+}
 int isPalindrome(int a)
 {
     int temp=revers(a);
@@ -14,17 +25,6 @@ int isPalindrome(int a)
 		return 0;
 	}
 }
-int revers(int a)
-{  
-    int temp =0;
-    while(a != 0)
-    {
-        temp*=10;
-        temp+=a%10;
-    }
-    return temp;
-}
-
 int isArmstrong(int a)
 {
     int count =0;
