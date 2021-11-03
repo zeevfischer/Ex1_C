@@ -6,15 +6,15 @@ OBJECTS_LIB2=advancedClassificat.o
 OBJECTS_LIB3=advancedClassificationRecursion.o
 FLAGS= -Wall -g
 
-all: mains maindloop maindrc loops  
+all: mains maindloop maindrec loops  
 mains: $(OBJECTS_MAIN) libclassrec.a 
 	$(cc) $(FLAGS) -o mains $(OBJECTS_MAIN) libclassrec.a -lm
 
 maindloop: $(OBJECTS_MAIN) libclassloops.so
 	$(cc) $(FLAGS) -o maindloop $(OBJECTS_MAIN) ./libclassloops.so -lm
 
-maindrc: $(OBJECTS_MAIN) libclassrec.so
-	$(cc) $(FLAGS) -o maindrc $(OBJECTS_MAIN) ./libclassrec.so -lm
+maindrec: $(OBJECTS_MAIN) libclassrec.so
+	$(cc) $(FLAGS) -o maindrec $(OBJECTS_MAIN) ./libclassrec.so -lm
 
 loops: libclassloops.a
 libclassloops.a: $(OBJECTS_LIB1) $(OBJECTS_LIB2)
@@ -44,4 +44,4 @@ $(OBJECTS_LIB3): advancedClassificationRecursion.c NumClass.h
 
 .PHONY: clean all
 clean:
-	rm -f *.o  *.a *.so mains maindloop maindrc
+	rm -f *.o  *.a *.so mains maindloop maindrec
