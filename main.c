@@ -4,7 +4,7 @@
 
 int main()
 {
-    printf("enter two numbers \n");
+    // printf("enter two numbers \n");
     int a;
     int b;
     while ((scanf ("%d%d" , &a , &b) != 2) || (a < 0) || (b < 0))
