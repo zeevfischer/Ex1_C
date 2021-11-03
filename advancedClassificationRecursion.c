@@ -4,43 +4,26 @@
 
 int isPalindrome(int a)
 {
-	if(a==0)
+	int temp =revers(a,0);
+	if(a==temp)
 	{
 		return 1;
 	}
 	else
 	{
-		int count =0;
-		double temp=(double)a;
-		while((int)temp != 0)
-		{
-			count++;
-			temp/=10;
-		}
-		temp*=10;
-		if(count ==1)
-		{
-			return 1;//true
-		}
-		if(count==2 && (a%10 == (int)temp))
-		{
-			return 1;
-		}
-		if(a%10 != (int)temp)
-		{
-			return 0;//false
-		}
-		else
-		{
-			temp=temp-(int)temp;
-			for(int i = 1 ;i < count-1;i++)
-			{
-				temp*=10;
-			}
-			return isPalindrome((int)temp);
-		}
+		return 0;
 	}
 }
+int revers(int a,int temp)
+{
+	if(a==0)
+	{
+		return temp;
+	}
+	temp=(temp*10) + (a%10);
+	return revers(a/10,temp);
+}
+
 int help(int a,int sum,int count)
 {
 	if(a != 0)

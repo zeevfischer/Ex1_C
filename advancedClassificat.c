@@ -4,32 +4,25 @@
 
 int isPalindrome(int a)
 {
-    if(a==0)
+    int temp=revers(a);
+    if(a==temp)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
+int revers(int a)
+{  
+    int temp =0;
+    while(a != 0)
     {
-        return 0;
+        temp*=10;
+        temp+=a%10;
     }
-    int count =0;
-    double temp=(double)a;
-    while((int)temp != 0)
-    {
-        count++;
-        temp/=10;
-    }
-    temp*=10;
-    for (int i = 0; i < count/2; i++)
-    {
-        if(a%10 != (int)temp)
-        {
-            return 0;//false
-        }
-        else
-        {
-            a=a/10;
-            temp=temp-(int)temp;
-            temp=temp*10;
-        }
-    }
-    return 1;
+    return temp;
 }
 
 int isArmstrong(int a)
