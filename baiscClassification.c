@@ -3,11 +3,11 @@
 
 int isPrime(int a)
 {
-    if(a==1 || (a>2 && a%2==0))
+    if(a==0 || (a>2 && a%2==0))
     {
         return 0;
     }
-    for(int i = 2 ;i < a/2;i++)
+    for(int i = 1 ;i < a/2;i++)
     {
         if(a % i == 0)
         {
@@ -35,6 +35,10 @@ int atzeret(int a)
 } 
 int isStrong(int a)
 {
+    if(a==0)
+    {
+        return 0;
+    }
     int save=a;
     int sum=0;
     while(a != 0)

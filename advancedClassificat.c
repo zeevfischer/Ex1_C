@@ -4,6 +4,10 @@
 
 int isPalindrome(int a)
 {
+    if(a==0)
+    {
+        return 0;
+    }
     int count =0;
     double temp=(double)a;
     while((int)temp != 0)
