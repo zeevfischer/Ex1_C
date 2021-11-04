@@ -2,6 +2,15 @@
 #include "NumClass.h"
 #include <math.h>
 
+int revers(int a,int temp)
+{
+	if(a==0)
+	{
+		return temp;
+	}
+	temp=(temp*10) + (a%10);
+	return revers(a/10,temp);
+}
 int isPalindrome(int a)
 {
 	int temp =revers(a,0);
@@ -13,15 +22,6 @@ int isPalindrome(int a)
 	{
 		return 0;
 	}
-}
-int revers(int a,int temp)
-{
-	if(a==0)
-	{
-		return temp;
-	}
-	temp=(temp*10) + (a%10);
-	return revers(a/10,temp);
 }
 
 int help(int a,int sum,int count)
